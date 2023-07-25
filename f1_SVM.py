@@ -36,9 +36,8 @@ print(df.head())
 
 # # Label Encode : turn the text feature or text label into a digi-number feature
 # le = LabelEncoder()
-# Y = le.fit_transform(Y)
-# df[-1] = Y
-# print(Y,type(Y[8]))
+# df.iloc[:,-1] = le.fit_transform(df.iloc[:,-1])
+# # print(Y,type(Y[8]))
 # or Use this pandas preprocessing
 df["class"] = (df["class"] == "g").astype(int) # True -> 1 , False -> 0 
 
